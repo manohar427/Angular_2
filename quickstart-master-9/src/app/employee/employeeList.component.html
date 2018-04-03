@@ -1,0 +1,55 @@
+<table border='1'>
+	<thead>
+		<td>
+			Code
+		</td>
+		<td>
+			Name
+		</td>
+		<td>
+			Index
+		</td>
+		<td>
+			Is First
+		</td>
+		<td>
+			Is Last
+		</td>
+		<td>
+			Is Even
+		</td>
+		<td>
+			Is Odd
+		</td>
+	</thead>
+
+	<tbody>
+		
+		<tr *ngFor="let x of employees;trackBy:trackByEmpCode;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd">
+			<td>
+			{{x.code}}
+		</td>
+		<td>
+			{{x.name}}
+		</td>
+		<td>
+			{{i+1}}
+		</td>
+		<td>
+			{{isFirst}}
+		</td>
+		<td>
+			{{isLast}}
+		</td>
+		<td>
+			{{isEven}}
+		</td>
+		<td>
+			{{isOdd}}
+		</td>
+	</tr>
+	</tbody>
+
+</table>
+
+<button (click)='getEmployees()'>Refresh Employee</button>

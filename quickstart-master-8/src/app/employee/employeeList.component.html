@@ -1,0 +1,27 @@
+<table>
+	<thead>
+		<td>
+			Code
+		</td>
+		<td>
+			Name
+		</td>
+	</thead>
+
+	<tbody>
+		<tr *ngIf="employees || employees.length == 0">
+			 <td colspan="2">
+			 	No employees to be displayed.
+			 </td>
+		</tr>
+		<tr *ngFor="let x of employees">
+			<td>
+			{{x.code}}
+		</td>
+		<td>
+			{{x.name}}
+		</td>
+	</tr>
+	</tbody>
+
+</table>

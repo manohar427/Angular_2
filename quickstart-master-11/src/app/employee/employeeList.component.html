@@ -1,0 +1,45 @@
+<table border='1'>
+	<thead>
+		<td>
+			Code
+		</td>
+		<td>
+			Name
+		</td>
+		<td>
+			Salary
+		</td>
+		<td>
+			DOB
+		</td>
+		<td>
+			Gender
+		</td>
+		
+	</thead>
+
+	<tbody>
+		
+		<tr *ngFor="let x of employees;trackBy:trackByEmpCode;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd">
+		<td>
+			{{x.code}}
+		</td>
+		<td>
+			{{x.name|uppercase|employeeTitle:x.gender}}
+		</td>
+		<td>
+			{{x.salary|currency:'USD':true:'1.3-3'}}
+		</td>
+		<td>
+			{{x.dateOfBirth|date:'fullDate'|uppercase}}
+		</td>
+		<td>
+			{{x.gender}}
+		</td>
+		
+	</tr>
+	</tbody>
+
+</table>
+
+<button (click)='getEmployees()'>Refresh Employee</button>
