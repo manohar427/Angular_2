@@ -26,7 +26,19 @@ var myObj = {name:"King of all time"};
 
 //2.Apply demo
 var args = ["A","B","C"];
-console.log(greeting2.apply(myObj,args));
+var xxx = greeting2.apply(myObj,args);
+console.log("XXXXX:"+xxx);
 
 
 //2.Bind demo
+var obj3 = {name:"Niladri"};
+
+var greeting3 = function(a,b,c){
+    return "welcome "+this.name+" to "+a+" "+b+" in "+c;
+};
+
+//creates a bound function that has same body and parameters 
+var bound = greeting3.bind(obj3); 
+console.dir(bound); ///returns a function
+console.log("Output using .bind() below ");
+console.log(bound("Newtown","KOLKATA","WB"));
