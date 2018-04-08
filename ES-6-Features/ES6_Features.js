@@ -101,6 +101,91 @@ ele.forEach(myFunc1);
 console.log(even);
 */
 
+let obj = {
+  myVar: 'foo',
+  
+  myFunc: function() {
+    console.log(this.myVar)
+  }
+}
+//obj.myFunc();
+
+let obj1 = {
+  myVar: 'foo',
+  
+  myFunc: function() { 
+    console.log(this.myVar);   
+ 
+    setTimeout(function() {
+      console.log(this.myVar)
+    }, 1000)
+  }
+}
+//obj1.myFunc();
+
+let obj2 = {
+  myVar: 'foo',
+  
+  myFunc: function() { 
+    let self = this
+    console.log(this.myVar)  
+  
+    setTimeout(function() {
+      console.log("obj2:"+self.myVar)
+    }, 1000)
+  }
+}
+//obj2.myFunc();
+
+let obj3 = {
+  myVar: 'foo',
+  
+  myFunc: function() { 
+    console.log(this.myVar)  
+  
+    setTimeout(() => {
+      console.log("obj3:"+this.myVar)
+    }, 1000)
+  }
+}
+//obj3.myFunc() ;
+let obj4 = {
+  myVar: 'foo',
+  
+  myFunc: () => { 
+    console.log(this.myVar)  
+  }
+}
+//obj4.myFunc()
+
+var Car =  function(){
+    this.speed  = 100;
+    var self = this;
+	setInterval(function (){
+		self.speed ++;
+		console.log(self.speed);
+	},1000
+		)
+}
+//var c = new Car();
+
+
+var Car1 =  function(){
+    this.speed  = 100;
+	setInterval(() => {
+		this.speed ++;
+		console.log(this.speed);
+	},1000
+		)
+}
+//var c1 = new Car1();
+
+var n1 = 9;
+var n2 = "9";
+
+console.log("1:"+(n1==n2));
+console.log("2:"+(n1===n2));
+
 /************************************************************
 5. Block-Scoped Constructs Let and Const
 *************************************************************/
