@@ -1,3 +1,5 @@
+
+//1.Call demo
 var obj = {name:"Manohar"};
 
 var greeting = function(a,b,c){
@@ -21,3 +23,10 @@ var myObj = {name:"King of all time"};
 
 //welcome Manohar and A
 //welcome King of all time and A1111
+
+//2.Apply demo
+var args = ["A","B","C"];
+console.log(greeting2.apply(myObj,args));
+
+
+//2.Bind demo
